@@ -1,3 +1,4 @@
+#!/bin/bash
 content = $(curl -i \
      -H "Content-Type: application/json" \
      -d '
