@@ -1,4 +1,4 @@
-content = "$(curl -i \
+curl -i \
 -H "Content-Type: application/json" \
 -d '
 { "auth": {
@@ -16,4 +16,4 @@ content = "$(curl -i \
 "domain": { "id": "default" }
 } }
 } }' \
-http://localhost/identity/v3/auth/tokens)"
+http://localhost/identity/v3/auth/tokens
