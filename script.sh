@@ -1,5 +1,5 @@
 #!/bin/bash
-content = $(curl -i \
+content=$(curl -i \
      -H "Content-Type: application/json" \
      -d '
    { "auth": {
