@@ -17,4 +17,4 @@ content=$(curl -i \
            "domain": { "id": "default" }
 } }
 } }' \
-http://localhost/identity/v3/auth/tokens)
+http://localhost/identity/v3/auth/tokens | grep -oP '(X-Subject-Token: ).*')
