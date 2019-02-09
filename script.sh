@@ -18,5 +18,5 @@ content=$(curl -i \
 } }
 } }' \
 http://localhost/identity/v3/auth/tokens | grep -oP '(X-Subject-Token: ).*')
-export OS_TOKEN=$content
+export OS_TOKEN=${content//$'^[^:]*:'}
 echo $OS_TOKEN
