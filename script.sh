@@ -17,6 +17,6 @@ content=$(curl -i \
            "domain": { "id": "default" }
 } }
 } }' \
-http://localhost/identity/v3/auth/tokens | grep -oP '(X-Subject-Token: ).*')
-export OS_TOKEN=${content//$'^[^:]*:'}
+http://localhost/identity/v3/auth/tokens | grep -oP '(X-Subject-Token: \K\w+).*')
+export OS_TOKEN=$content
 echo $OS_TOKEN
