@@ -20,7 +20,7 @@ content=$(curl -i \
 http://localhost/identity/v3/auth/tokens | grep -oP '(X-Subject-Token: \K\w+).*')
 export OS_TOKEN=$content
 
-curl -s\
+curl -s \
 -H "Content-Type: application/json" \
 -H "X-Auth-Token:$OS_TOKEN" \
 -d '
