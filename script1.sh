@@ -18,6 +18,6 @@ content=$(curl -i \
 } }
 } }' \
 http://localhost/identity/v3/auth/tokens | grep -oP '(X-Subject-Token: \K\w+).*')
-export OS_TOKEN=$content
+export OS_TOKEN=${content//$'\015'}
 #List of VMs:
 curl -s -H "X-Auth-Token: $OS_TOKEN" "http://localhost/compute/v2.1/networks"
