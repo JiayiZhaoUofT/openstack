@@ -17,8 +17,9 @@ content=$(curl -i \
            "domain": { "id": "default" }
 } }
 } }' \
-http://localhost/identity/v3/auth/tokens | grep -oP '(X-Subject-Token: \K\w+).*')
-export OS_TOKEN=$content
+http://localhost/identity/v3/auth/tokens | grep "X-Subject-Token:" | awk -F":" '{ print $2 }
+# | grep -oP '(X-Subject-Token: \K\w+).*')
+export OS_TOKEN=${content//$'\015'}
 
 curl -s \
 -H "Content-Type: application/json" \
