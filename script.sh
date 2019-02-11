@@ -26,7 +26,7 @@ curl -s \
 -d '
 {
 "subnet": {
-"network_id": "d32019d3-bc6e-4319-9c1d-6722fc136a22",
+"network_id": "7697d4c6-5b4c-4ea9-a1d6-af7d7f716f2b",
 
 "ip_version": 4,
 "cidr": "192.168.199.0/24"
